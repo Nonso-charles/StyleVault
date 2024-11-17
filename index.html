@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVault</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .cart-item {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-200 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#" class="hover:text-gray-600">StyleVault</a>
+            </div>
+            <!-- Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-medium">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-medium">Shop</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-medium">Collections</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-medium">About Us</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 font-medium">Contact</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="hidden md:flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                <input type="text" placeholder="Search products..." class="px-4 py-2 focus:outline-none" />
+                <button class="bg-blue-500 text-white px-4 py-2 hover:bg-blue-600">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 21l-4.35-4.35m1.57-5.22a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Icons -->
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-500">
+                    <a href="#shop"><img src="shopping-cart.png" alt="" class="w-7 h-7"></a>
+                </a>
+                <a href="registration-form.html" class="text-gray-700 hover:text-blue-500" id="profile-con">
+                    <img src="user.png" alt="user.png" class="w-7 h-7">
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menuButton" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#" class="block text-gray-700 hover:text-blue-500">Home</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-500">Shop</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-500">Collections</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-500">About Us</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('hero-img.jpeg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay for better text contrast -->
+        <div class="container mx-auto px-4 h-full flex flex-col justify-center items-start relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+                Discover Your <span class="text-blue-400">Style</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-8">
+                Embrace the latest trends with our exclusive collections.
+            </p>
+            <a href="#shop" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg text-lg">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="py-12 bg-gray-100" id="shop">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8">Shop Our Collection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product Item -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product1.jpeg" alt="Product 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 1</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 1" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product2.jpeg" alt="Product 2" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 2</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 2" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product3.jpeg" alt="Product 3" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 3</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 3" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product4.jpeg" alt="Product 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 4</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 4" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product5.jpeg" alt="Product 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 5</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 5" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!--Product 6 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="product6.jpeg" alt="Product 6" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Product Name 6</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 add-to-cart-btn" data-name="Product Name 6" data-price="49.99">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Shopping Cart</h2>
+            <ul id="cart-items" class="space-y-4"></ul>
+            <p id="cart-total" class="text-lg font-semibold mt-4">Total: $0.00</p>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8">Our Collections</h2>
+            <div class="flex justify-center mb-8">
+                <!-- Filter Buttons -->
+                <button class="filter-btn bg-blue-500 text-white py-2 px-4 rounded-lg mx-2" data-category="all">All</button>
+                <button class="filter-btn bg-blue-500 text-white py-2 px-4 rounded-lg mx-2" data-category="men">Men</button>
+                <button class="filter-btn bg-blue-500 text-white py-2 px-4 rounded-lg mx-2" data-category="women">Women</button>
+                <button class="filter-btn bg-blue-500 text-white py-2 px-4 rounded-lg mx-2" data-category="accessories">Accessories</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="collection-grid">
+                <!-- Collection Items -->
+                <div class="collection-item bg-white shadow-lg rounded-lg overflow-hidden" data-category="men">
+                    <img src="mens.jpeg" alt="Men's Collection" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Men's Collection</h3>
+                        <p class="text-gray-600 mt-2">Classic and modern styles for men.</p>
+                    </div>
+                </div>
+                <div class="collection-item bg-white shadow-lg rounded-lg overflow-hidden" data-category="women">
+                    <img src="women.jpeg" alt="Women's Collection" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Women's Collection</h3>
+                        <p class="text-gray-600 mt-2">Chic and trendy outfits for women.</p>
+                    </div>
+                </div>
+                <div class="collection-item bg-white shadow-lg rounded-lg overflow-hidden" data-category="accessories">
+                    <img src="accesories.jpeg" alt="Accessories" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Accessories</h3>
+                        <p class="text-gray-600 mt-2">Complete your look with our accessories.</p>
+                    </div>
+                </div>
+                <!-- Add more collection items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Contact Form -->
+                <div class="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
+                    <div class="bg-white shadow-lg rounded-lg p-8">
+                        <form action="#" method="post">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Full Name</label>
+                                <input class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                                <input class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                                <textarea class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-3 rounded-lg hover:bg-blue-600 transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="w-full lg:w-1/3 px-4">
+                    <div class="bg-white shadow-lg rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                        <p class="text-gray-600 mb-4">We'd love to hear from you. Whether you have a question about products, orders, or anything else, our team is ready to answer your questions.</p>
+                        <p class="text-gray-800 font-semibold mb-2"><i class="fas fa-phone-alt"></i> Phone: (123) 456-7890</p>
+                        <p class="text-gray-800 font-semibold mb-2"><i class="fas fa-envelope"></i> Email: contact@StyleVault.com</p>
+                        <p class="text-gray-800 font-semibold"><i class="fas fa-map-marker-alt"></i> Address: 22 Time Square Ave, New York, NY</p>
+
+                        <!-- Social Media Icons -->
+                        <div class="flex space-x-4 mt-6">
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Store Information -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">StyleVault</h3>
+                    <p class="text-gray-400">Discover the latest trends in fashion with us. Premium quality clothing for every occasion.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-500">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-500">Shop</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-500">Collections</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-blue-500">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-gray-400"><i class="fas fa-phone-alt"></i> Phone: (123) 456-7890</p>
+                    <p class="text-gray-400 mt-2"><i class="fas fa-envelope"></i> Email: support@StyleVault.com</p>
+                    <p class="text-gray-400 mt-2"><i class="fas fa-map-marker-alt"></i> 123 Fashion Blvd, New York, NY</p>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+                <p class="text-gray-500">&copy; 2024 StyleVault. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
